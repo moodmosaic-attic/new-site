@@ -9,7 +9,8 @@ summary: Provides a sample configuration for AutoFoq, in order to use Foq's retu
 
 Foq's behavior for mock objects that have not been explicitly setup, is to return `null` if the return type of a function is a [reference type](http://en.wikipedia.org/wiki/Reference_type) (e.g. a string):
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 type IInterface =
    abstract DoSomething : unit -> string
 
@@ -30,7 +31,8 @@ Foq now provides the necessary hooks to override this behavior and the rest of t
 
 [Ruben Bartelink](http://twitter.com/rbartelink) originally discussed and proposed in [Foq discussions](http://foq.codeplex.com/discussions/470568) about a `returnStrategy` argument for members that have not been explicitly setup:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let sut = Mock<IInterface>(returnStrategy = fun x -> "123" :> obj).Create()
 // No expectations have been setup - fallback to returnStrategy function.
 
@@ -42,7 +44,8 @@ let actual = sut.DoSomething()
 
  The existing [AutoFoqCustomization](https://github.com/AutoFixture/AutoFixture/blob/master/Src/AutoFoq/AutoFoqCustomization.fs) has no specific hook to select Foq's new `returnStrategy` argument. This can be addressed when necessary with the customization shown below:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<AutoOpen>]
 module internal SynthesizerMethod =
     type private SynthesizerMethod<'T when 'T : not struct>
@@ -103,7 +106,8 @@ The only difference from the original AutoFoqCustomization is the usage of Foq's
 
 ## Typical usage
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<Fact>]
 let CustomizationFillsReturnValues () = 
     let fixture = Fixture().Customize(AutoFoqSynthesizeReturnValuesCustomization())
@@ -121,7 +125,8 @@ let CustomizationFillsReturnValues () =
 
 The above test can be also written declaratively using [AutoData](http://blog.ploeh.dk/2010/10/08/AutoDataTheoriesWithAutoFixture.aspx) theories:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 type TestConventionsAttribute() = 
     inherit AutoDataAttribute(
         Fixture().Customize(AutoFoqSynthesizeReturnValuesCustomization()))

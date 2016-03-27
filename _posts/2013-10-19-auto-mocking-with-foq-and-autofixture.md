@@ -25,7 +25,8 @@ PM> Install-Package AutoFixture.AutoFoq
 
 To use it, add an `AutoFoqCustomization` to the `Fixture` instance:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let fixture = Fixture().Customize(AutoFoqCustomization())
 {% endhighlight %}
 
@@ -33,7 +34,8 @@ let fixture = Fixture().Customize(AutoFoqCustomization())
 
 In the test below the mocked instance is created automatically by Foq:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<Fact>]
 let AutoMockInterfaceAndSetupExpectations() =
     // Fixture setup
@@ -49,7 +51,8 @@ let AutoMockInterfaceAndSetupExpectations() =
 
 The above test can be written declaratively using [AutoData](http://blog.ploeh.dk/2010/10/08/AutoDataTheoriesWithAutoFixture.aspx) theories:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<Theory>][<AutoFoqData>]
 let AutoMockInterfaceAndSetupExpectationsDeclaratively 
   (sut: IInterface, dummy: obj) =
@@ -59,7 +62,8 @@ let AutoMockInterfaceAndSetupExpectationsDeclaratively
 
 The `[AutoFoqData]` attribute is defined as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 type AutoFoqDataAttribute() = 
     inherit AutoDataAttribute(
         Fixture().Customize(AutoFoqCustomization()))

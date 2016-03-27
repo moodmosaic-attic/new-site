@@ -18,7 +18,8 @@ Random is a basic random number generation library, including the ability to spl
 
 from the Random package, and so it'll be easier to start by porting those in F#:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// This module deals with the common task of pseudo-random number generation.
 /// It makes it possible to generate repeatable results, by starting with a
@@ -114,7 +115,8 @@ let createNew() =
 
 To port QuickCheck's basic generators, and combinators for making custom ones, we need a type of `Gen<'a>`:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// LightCheck exports some basic generators, and some combinators for making
 /// new ones. Gen of 'a is the type for generators of 'a's and essentially is
@@ -139,7 +141,8 @@ type Gen<'a> =
 
 Finally, we also need a function[^2] that *runs* a generator; taking a `Gen<'a>` and returning random test data of type `'a`:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Runs a generator. The size passed to the generator is up to 30; if you want
 /// another size then you should explicitly use 'resize'.

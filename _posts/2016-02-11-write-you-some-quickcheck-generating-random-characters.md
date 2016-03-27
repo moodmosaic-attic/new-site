@@ -19,7 +19,8 @@ I'm going to need a couple of generators for this:
 
 Porting Gen's `oneof`
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Randomly uses one of the given generators.
 /// </summary>
@@ -34,7 +35,8 @@ let oneof gens =
 
 Porting Gen's `elements` since `oneof` depends on it
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Generates one of the given values.
 /// </summary>
@@ -50,7 +52,8 @@ let elements xs =
 
 All the pieces are now in place, and so a char generator can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let char =
     Gen.oneof [ Gen.choose ( 32, 126)
                 Gen.choose (127, 255) ]
@@ -61,7 +64,8 @@ val char : Gen<char>
 
 Finally, here are some sample characters:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.char |> Gen.generate;;
 val it : char = 'æ'
 

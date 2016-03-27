@@ -10,7 +10,8 @@ hidden: true
 
 **1. Write a function**
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let ``the reverse of reverse of a list is the list itself`` =
     fun input -> input |> List.rev |> List.rev = input
 {% endhighlight %}
@@ -37,7 +38,8 @@ True
 
 Given a hypothetical `Gen` module, we can do something like this:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let generator = Gen.int |> Gen.list
 // val generator : Gen<int list>
 {% endhighlight %}

@@ -9,7 +9,8 @@ summary: Blog post series on implementing a minimal version of QuickCheck from s
 
 We already have a function that runs a generator `Gen<'a>` and returns random test data of type `'a`.
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 val generate : Gen<'a> -> 'a
 {% endhighlight %}
 
@@ -20,7 +21,8 @@ Now, in order to be able to generate random bytes, we need a couple of generator
 
 Porting Gen's `choose`
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Generates a random element in the given inclusive range, uniformly
 /// distributed in the closed interval [lo,hi].
@@ -32,7 +34,8 @@ let choose (lo, hi) = Gen(fun n r -> r) |> Gen.map (Random.range (lo, hi) >> fst
 
 Porting Gen's `map`, `bind`, and `return`[^1] since `choose` depends on them
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Sequentially compose two actions, passing any value produced by the first
 /// as an argument to the second.
@@ -65,7 +68,8 @@ let map f m =
 
 All the pieces are now in place, and so a byte generator can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let byte = Gen.choose (0, 255) |> Gen.map Operators.byte
 
 val byte : Gen<byte>
@@ -73,7 +77,8 @@ val byte : Gen<byte>
 
 Finally, here are some sample bytes:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.byte |> Gen.generate;;
 val it : byte = 125uy
 

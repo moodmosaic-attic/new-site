@@ -26,7 +26,8 @@ matching :: String -> Gen String
 
 In F#, a similar generator for [FsCheck](http://fscheck.github.io/FsCheck) can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let matching pattern =
     Gen.sized (fun size ->
         let xeger = Xeger pattern
@@ -38,7 +39,8 @@ let matching pattern =
 
 The `matching` function uses the [.NET port](https://www.nuget.org/packages/Fare/) of [dk.brics.automaton](http://www.brics.dk/automaton/) and [xeger](https://code.google.com/p/xeger/), and has the signature:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 val matching : pattern:string -> Gen<string>
 {% endhighlight %}
 
@@ -46,7 +48,8 @@ val matching : pattern:string -> Gen<string>
 
 Here's a way to generate regex-constrained strings with FsCheck in F# Interactive:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 #r "../packages/Fare/lib/net35/Fare.dll"
 #r "../packages/FsCheck/lib/net45/FsCheck.dll"
 
@@ -93,7 +96,8 @@ let d = generate (matching "^[a-zA-Z''-'\s]{1,40}$")
 
 Notice how FsCheck yields different results on each run:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let a = generate (matching "[xX][0-9a-z]")
 let b = generate (matching "[xX][0-9a-z]")
 let c = generate (matching "[xX][0-9a-z]")
@@ -109,7 +113,8 @@ That's because `matching` takes [the size of generated test data](http://blog.ni
 
 Finally, here's a [quantified property](https://fscheck.github.io/FsCheck/Properties.html) scenario using FsCheck with [xUnit.net](https://xunit.github.io/):
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open Fare
 open FsCheck
 open FsCheck.Xunit

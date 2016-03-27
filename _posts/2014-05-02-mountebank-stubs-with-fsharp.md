@@ -21,7 +21,8 @@ If fixture setup and fixture teardown phases are always the same, they could be 
 
 In [xUnit.net](https://github.com/xunit/xunit) we can do this by inheriting from [BeforeAfterTestAttribute](https://github.com/xunit/xunit/blob/master/src/xunit.core/Sdk/BeforeAfterTestAttribute.cs):
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 type UseImposterStubAttribute (mountebankHost, mountebankPort, imposterJson) =
     inherit BeforeAfterTestAttribute()
 
@@ -57,7 +58,8 @@ type UseImposterStubAttribute (mountebankHost, mountebankPort, imposterJson) =
 
 With xUnit.net and the `UseImposterStubAttribute`, the original [Stub example](http://www.mbtest.org/docs/api/stubs) can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<Fact; UseImposterStub(
     "192.168.1.4", 
     2525, 
@@ -134,7 +136,8 @@ info: [mb:2525] DELETE /imposters/4545
 
 It is now easy to do something similar with F#, xUnit.net and the `UseImposterStubAttribute`:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<Fact; UseImposterStub(
     "192.168.1.4", 
     2525, 

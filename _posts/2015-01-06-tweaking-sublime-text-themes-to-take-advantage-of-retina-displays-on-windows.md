@@ -27,7 +27,8 @@ If done manually, this can take some time. – Here is a way to **automate this 
 
 Save the following F# program to a file:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 module Sublime.Text.Windows
 
 open System
@@ -63,7 +64,8 @@ let patch theme =
 
 You should see something like:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 namespace FSI_0002.Sublime.Text.Windows
   type Theme =
     {Path: string;
@@ -75,7 +77,8 @@ Once you `open Sublime.Text.Windows`, execute the `patch` function by supplying 
 
 ### Soda Theme
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let sodaTheme = {
     Path = @"replace_this_with_the_soda_theme_path";
     DpiAgnostics = [
@@ -86,7 +89,8 @@ let sodaTheme = {
 } // In one line for SublimeREPL.
 {% endhighlight %}
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 patch sodaTheme
 {% endhighlight %}
 
@@ -94,14 +98,16 @@ patch sodaTheme
 
 Default Theme is .zipped in `\Packages\Theme - Default.sublime-package` and has to be unzipped first, patched, and then zipped back again.
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let defaultTheme = {
     Path = @"replace_this_with_the_unzipped_theme_path";
     DpiAgnostics = []
 } // In one line for SublimeREPL.
 {% endhighlight %}
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 patch defaultTheme
 {% endhighlight %}
 

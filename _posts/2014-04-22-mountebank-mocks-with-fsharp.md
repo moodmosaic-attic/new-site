@@ -44,7 +44,8 @@ Content-Type: application/json
 
 In F# this can be written using the [FSharp.Data](http://fsharp.github.io/FSharp.Data/index.html) [Http](http://fsharp.github.io/FSharp.Data/library/Http.html) module as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let create protocol host port =
     Http.Request(
         "http://" + host + ":2525/imposters/",
@@ -96,7 +97,8 @@ Your friendly customer service department.
 
 In F# this can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let expectedSubject = "Thank you for your order"
 (new SmtpClient("192.168.1.3", 4547)).Send(
     new MailMessage(
@@ -166,7 +168,8 @@ Connection: keep-alive
 
 In F# the `requests` JSON property can be decomposed and extracted using the FSharp.Data [JSON Parser](http://fsharp.github.io/FSharp.Data/library/JsonValue.html) and Http modules as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let getCapturedRequests (spy : HttpResponse) = 
     let getRequests jsonValue = 
         match jsonValue with
@@ -197,13 +200,15 @@ let getCapturedRequests (spy : HttpResponse) =
 
 The signature of `GetCapturedRequests` function is:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 spy : HttpResponse -> JsonValue [] option
 {% endhighlight %}
 
 The value of the `subject` property can be similarly decomposed and extracted with Pattern Matching:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 match GetCapturedRequest imposter "subject" with
 | Some actual -> expectedSubject = actual
 | None -> 
@@ -213,7 +218,8 @@ match GetCapturedRequest imposter "subject" with
 
 With all the above a test using [xUnit.net](https://github.com/xunit/xunit) and [composed assertions with Unquote](http://blog.ploeh.dk/2014/03/21/composed-assertions-with-unquote/) could be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let verify = Swensen.Unquote.Assertions.test
     
 [<Fact>]
@@ -244,7 +250,8 @@ let sendMailTransmitsCorrectSubject () =
 
 In this case, it's only necessary to verify that the SMTP request on the imposter was made only once:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<Fact>]
 let sendMailTransmitsCorrectNumberOfSmtpRequests () =
     let expectedNumberOfRequests = 1

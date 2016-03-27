@@ -43,7 +43,8 @@ Output:
 
 FsCheck also defines a `sample` function, though it behaves in a slightly different way, as it takes two additional arguments `size` and `n`:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 val sample : size:int -> n:int -> gn:Gen<'a> -> 'a list
 
 // `size` is the size of generated test data
@@ -54,7 +55,8 @@ Let's pause here and run `sample` by supplying different values for `size`.
 
 ### Using 0 for *size* ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 
 open FsCheck.Gen
 
@@ -98,7 +100,8 @@ Length = 11
 
 ### Using 1000 for *size* ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FsCheck.Gen
 
 let sample'  = sample 1000 11 // Size = 1000, Number of samples = 11
@@ -151,7 +154,8 @@ Instead of the `choose` generator, the following example uses `generate<int>`.
 
 ### Using 0 for *size* ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FsCheck.Arb
 open FsCheck.Gen
 
@@ -180,7 +184,8 @@ That's because `generate<int>` takes `size` into account.
 
 ### Using 1000 for *size* ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FsCheck.Arb
 open FsCheck.Gen
 
@@ -215,7 +220,8 @@ For the sake of completeness, here's the original example with `choose` rewritte
 
 ### *sample* and *choose*, using 0 for *size* ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FsCheck.Gen
 
 let sample'  = sample 0 11 // Size = 0, Number of samples = 11
@@ -241,7 +247,8 @@ Length = 11
 
 ### *sample* and *choose*, using 1000 for *size* ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FsCheck.Gen
 
 let sample'  = sample 1000 11 // Size = 1000, Number of samples = 11
@@ -281,7 +288,8 @@ The above F# examples use the backward pipe `<|` operator to look similar to the
 
 Using the forward pipe operator, the previous example would be:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let result =
     (fun s -> Gen.choose (-s, s))
     |> Gen.sized

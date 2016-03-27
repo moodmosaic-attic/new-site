@@ -64,7 +64,8 @@ liftM3 :: Monad m => (a1 -> a2 -> a3 -> r) -> m a1 -> m a2 -> m a3 -> m r
 
 So, in F#, a generator for floats can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Generates a random real number.
 /// </summary>
@@ -75,7 +76,8 @@ let float =
 
 And the `lift3` function in F# can be written [in terms of `apply` and `return`](http://fsharpforfunandprofit.com/posts/elevated-world/#apply):
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Unpacks a function wrapped inside a generator, applying it into a new
 /// generator.
@@ -100,7 +102,8 @@ let lift3 f m1 m2 m3 = Gen.apply (Gen.apply (Gen.apply (Gen.init f) m1) m2) m3
 
 Finally, here are some sample floats:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.float |> Gen.generate;;
 val it : float = 3.466666667
 

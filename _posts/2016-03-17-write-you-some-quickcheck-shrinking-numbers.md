@@ -21,7 +21,8 @@ shrink :: a -> [a]
 
 So in F# it can look like this:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 'a -> 'a seq
 {% endhighlight %}
 
@@ -98,7 +99,8 @@ shrinkIntegral :: Integral a => a -> [a]
 
 Here's the equivalent one in F#:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 (* This has the type n:int -> seq<int> but we'll
    come and fix this later on. *)
 
@@ -164,7 +166,8 @@ val it : seq<int> = seq [7; 0; -4; -6]
 
 Here is again the `shrinkNumber` number function that was ported from Haskell:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 (* This has the type n:int -> seq<int> but we'll
    come and fix this later on. *)
 
@@ -189,7 +192,8 @@ Fortunately, there's a way to make this polymorphic with [compile-time generics]
 
 Here's the end result:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FSharp.Core.LanguagePrimitives
 
 let inline shrinkNumber n =
@@ -206,7 +210,8 @@ let inline shrinkNumber n =
 
 And now the type has become generic:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // Formatted, in order to be easier to read:
 val inline shrinkNumber :
   n: ^a -> seq< ^a>

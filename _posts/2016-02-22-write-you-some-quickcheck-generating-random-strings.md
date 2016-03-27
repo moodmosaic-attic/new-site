@@ -17,7 +17,8 @@ The following generators are required for this:
 
 Given the above, a generator for strings can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Generates a random string.
 /// </summary>
@@ -29,7 +30,8 @@ let string =
 
 Here are some sample strings:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.string |> Gen.generate;;
 val it : String = "lof5ºÛ"
 
@@ -45,7 +47,8 @@ val it : String = "Ðê
 
 Generarting **upper-case strings**
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let upperCase = Gen.choose (65,  90) |> Gen.map Operators.char
 
 val upperCase : Gen<char>
@@ -61,7 +64,8 @@ val customString : g:Gen<char> -> Gen<String>
 
 Sample output:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > upperCase |> customString |> Gen.generate;;
 val it : String = "DGVHAYFAWIHQBOD"
 
@@ -75,7 +79,8 @@ val it : String = "XLYJSMEYYZXN"
 
 Generating **lower-case strings**
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let lowerCase = Gen.choose (97, 122) |> Gen.map Operators.char
 
 val lowerCase : Gen<char>
@@ -91,7 +96,8 @@ val customString : g:Gen<char> -> Gen<String>
 
 Sample output:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > lowerCase |> customString |> Gen.generate;;
 val it : String = "qsnj"
 

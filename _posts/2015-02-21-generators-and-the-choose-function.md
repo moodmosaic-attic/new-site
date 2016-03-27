@@ -55,13 +55,15 @@ Similarly, FsCheck defines the type `gen` as a [computation expression](https://
 
 The `choose` function is non-generic; instead it generates a [32-bit signed integer](https://msdn.microsoft.com/en-us/library/system.int32(v=vs.110).aspx?cs-save-lang=1&cs-lang=fsharp#code-snippet-1), with a uniform distribution in the closed interval *[l, h]*.
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 val choose : l:int * h:int -> Gen<int>
 {% endhighlight %}
 
 ### Example: Take a random element from a list ###
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 open FsCheck
 open FsCheck.Gen
 

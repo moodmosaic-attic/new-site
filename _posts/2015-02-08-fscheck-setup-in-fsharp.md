@@ -12,7 +12,8 @@ This post attempts to do the same in F#; bootstrap FsCheck with xUnit.net, but i
 
 **Install Paket, if not already installed**:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // samples-fscheck.fsx
 
 open System
@@ -30,7 +31,8 @@ if not (File.Exists "paket.exe") then
 
 **Reference Paket and specify the required packages**:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // samples-fscheck.fsx
 
 #r "paket.exe"
@@ -45,7 +47,8 @@ Paket.Dependencies.Install """
 
 **Reference Fake and specify the build parameters**:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // samples-fscheck.fsx
 
 #r "packages/FAKE/tools/FakeLib.dll"
@@ -63,7 +66,8 @@ let references =
 
 **Use Fake's DSL to define the build tasks**:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // samples-fscheck.fsx
 
 Target "CreateOutputPath" (fun _ -> 
@@ -90,7 +94,8 @@ Target "RunTests" (fun _ ->
 
 **Compose the build tasks into a build pipeline**:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // samples-fscheck.fsx
 
 "CreateOutputPath"
@@ -107,7 +112,8 @@ RunTargetOrDefault "RunTests"
 Add a simple (icebreaker) test, because there's always a bit of work involved in
 getting everything up and running:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // tests/GettingStarted.fs
 
 module GettingStarted
@@ -205,7 +211,8 @@ Status:                  Ok
 See the test failing, as a form of [Double Entry Bookkeeping](http://c2.com/cgi/wiki?DoubleEntryBookkeeping):
 
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 // Change:
 add x y = add y x
 

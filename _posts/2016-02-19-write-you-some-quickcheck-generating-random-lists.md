@@ -18,7 +18,8 @@ Two generators are required for this:
 
 Gen's `choose` is already available. Porting Gen's `vector`, which essentially [means](https://hackage.haskell.org/package/QuickCheck-2.8.2/docs/src/Test-QuickCheck-Gen.html#vectorOf) porting [replicateM](https://hackage.haskell.org/package/base-4.8.2.0/docs/Control-Monad.html#v:replicateM)
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Takes a list of generators of type 'a, evaluates each one of them, and
 /// collect the result, into a new generator of type 'a list.
@@ -61,7 +62,8 @@ Most, if not all, monadic computations on the `Gen<'a>` type can be written in t
 
 A computation expression just makes this a whole lot easier:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 [<AutoOpen>]
 module Builder =
     type GenBuilder() =
@@ -73,7 +75,8 @@ module Builder =
 
 Given the above, a generator for lists of random length can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Generates a list of random length. The maximum length of the list depends
 /// on the size parameter.
@@ -85,7 +88,8 @@ let list g = Gen.sized (fun s -> gen { let! n = Gen.choose (0, s)
 
 Finally, here are some sample lists of type `int` and `char`, but it can be *any* generator of type `'a` really
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.int |> Gen.list |> Gen.generate;;
 val it : int list = [-10; 1; 0; -14; 11; -2; -7]
 

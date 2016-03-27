@@ -11,7 +11,8 @@ In the [previous](/2016/02/12/write-you-some-quickcheck-generating-random-boolea
 
 Recall that the `Gen<'a>` type is ported already in [this](/2016/02/09/write-you-some-quickcheck-prelude/) previous post as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// A generator for values of type 'a.
 /// </summary>
@@ -32,7 +33,8 @@ So, to generate numbers, we need:
 
 Porting Gen's `sized`
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Used to construct generators that depend on the size parameter.
 /// </summary>
@@ -45,7 +47,8 @@ let sized g =
 
 Given the above, a 32-bit signed integer generator can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let int = Gen.sized (fun n -> Gen.choose (-n, n))
 
 val int : Gen<int>
@@ -53,7 +56,8 @@ val int : Gen<int>
 
 Here are some sample integers:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.int |> Gen.generate;;
 val it : int = 0
 
@@ -125,7 +129,8 @@ I can run the integer generator again, but this time I'll **override** the runti
 
 This prompts me to port Gen's `resize`
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 /// <summary>
 /// Overrides the size parameter. Returns a generator which uses the given size
 /// instead of the runtime-size parameter.
@@ -136,7 +141,8 @@ let resize n (Gen m) = Gen(fun _ r -> m n r)
 
 Finally, here are some sample integers in the range [-999, 999]:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.int |> Gen.resize 999 |> Gen.generate;;
 val it : int = -808
 

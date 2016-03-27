@@ -16,7 +16,8 @@ Two generators are required for this, which have been ported already on previous
 
 Given the above, a boolean generator can be written as:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 let bool =
     Gen.oneof [ Gen.init true
                 Gen.init false ]
@@ -26,7 +27,8 @@ val bool : Gen<bool>
 
 Finally, here are some sample booleans:
 
-{% highlight fsharp %}
+<!-- Until rouge highlights F# syntax, use OCaml -->
+{% highlight ocaml %}
 > Gen.bool |> Gen.generate;;
 val it : bool = true
 
