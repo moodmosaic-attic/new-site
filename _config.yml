@@ -1,13 +1,13 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Nikos
 locale:           en_US
 url:
 
 
 # Jekyll configuration
 
-permalink:   /:categories/:title/
+permalink:   /:year/:month/:day/:title/
 markdown:    kramdown
 highlighter: rouge
 sass:
@@ -41,22 +41,22 @@ titlecase: true
 
 # Site owner
 owner:
-  name: Your Name
-  avatar: bio-photo.jpg
-  bio: "Describe your self."
+  name: Nikos Baxevanis
+  avatar: bio-photo.png
+  bio: "Nikos is an open-source programmer with a passion for testing tools."
   email:
   disqus-shortname:
-  twitter: #username
+  twitter: nikosbaxevanis
   facebook: #username
   google:
     plus: #username
-    analytics:
+    analytics: UA-24262928-1
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  github: moodmosaic
+  stackoverflow: 467754/nikos-baxevanis
   linkedin: #username
   xing: #username
   instagram: #username
@@ -69,7 +69,7 @@ owner:
   youtube: #username
   soundcloud: #username
   weibo: #username
-  flickr: #username
+  flickr: nikosbaxevanis
   codepen: #username
 
 include: [".htaccess"]
