@@ -1,0 +1,58 @@
+---
+layout: post
+title: Truly Constrained Non-Deterministic Numbers in AutoFixture
+categories: ['AutoFixture']
+summary: More 'random' numbers for AutoFixture v2.
+---
+
+Numbers in [AutoFixture](https://github.com/autofixture/autofixture) are currently created using a **strictly monotonically increasing** sequence.
+
+{% highlight csharp %}
+var fixture = new Fixture();
+
+var i = fixture.CreateAnonymous<int>();
+// Prints -> 1
+var l = fixture.CreateAnonymous<long>();
+// Prints -> 2
+var f = fixture.CreateAnonymous<float>();
+// Prints -> 3.0
+{% endhighlight %}
+
+Starting with version *2.13.0*, by applying a specific customization numbers can also be created using a **constrained non-deterministic** sequence. The new customization is called `RandomNumericSequenceCustomization`.
+
+{% highlight csharp %}
+var fixture = new Fixture()
+    .Customize(new RandomNumericSequenceCustomization());
+
+var i = fixture.CreateAnonymous<int>();
+// Prints -> 122
+var l = fixture.CreateAnonymous<long>();
+// Prints -> 38
+var f = fixture.CreateAnonymous<float>();
+// Prints -> 147.0
+{% endhighlight %}
+
+Once the customization has been applied to a `Fixture` instance subsequent requests for numeric types will yield random non-repeatable numbers in the range of [1, 255]. When requesting more than 255 numbers the range is automatically changed to [256, 32767] and so on.
+
+<p class="message">The default ranges are [1, 255], [256, 32767], and [32768, 2147483647].</p>
+
+## Supplying a custom range
+
+To supply a custom range, customize an instance of the Fixture class with an instance of the `RandomNumericSequenceGenerator` and pass to its constructor a sequence of integer numbers (e.g. `-100, 100, 255`).
+
+<p class="message">The sequence must be two positive or negative numbers optionally followed by a series of greater numbers.</p>
+
+{% highlight csharp %}
+var fixture = new Fixture();
+fixture.Customizations.Add(
+    new RandomNumericSequenceGenerator(-100, 100, 255));
+
+var i = fixture.CreateAnonymous<int>();
+// Prints -> -95
+var l = fixture.CreateAnonymous<long>();
+// Prints -> 47
+var f = fixture.CreateAnonymous<float>();
+// Prints -> -82.0
+{% endhighlight %}
+
+After applying the customization, numbers are now created in the range of [-100, 100]. However, when requesting more numbers than the range size the range is automatically changed to [101, 255].
