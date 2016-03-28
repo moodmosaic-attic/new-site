@@ -2,7 +2,7 @@
 layout: post
 title: Short intro to QuickCheck
 categories: ['QuickCheck']
-summary: Write a function, generate random input, pass that random input to that function multiple times. Report back success or failure. Essentially, that’s QuickCheck.
+summary: What QuickCheck does? (1 minute read.)
 hidden: true
 ---
 

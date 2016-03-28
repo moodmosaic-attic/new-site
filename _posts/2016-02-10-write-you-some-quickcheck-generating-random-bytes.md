@@ -2,7 +2,7 @@
 layout: post
 title: Write you some QuickCheck - Generating random bytes
 categories: ['QuickCheck']
-summary: Blog post series on implementing a minimal version of QuickCheck from scratch.
+summary: Generating random bytes. Part of a series of posts on implementing a minimal version of QuickCheck from scratch. 
 ---
 
 *This post is part of a [series of posts on implementing a minimal version of QuickCheck](/2016/02/08/write-you-some-quickcheck/) from scratch. The source code is [available on GitHub](https://gist.github.com/moodmosaic/65c576732722b3b7a200).*
