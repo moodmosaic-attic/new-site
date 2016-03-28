@@ -1,13 +1,13 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, theme, responsive]
-modified: 2014-08-08T20:53:07.573882-04:00
-comments: true
+title: About
+tags: [about]
+comments: false
+share: false
 image:
-  feature: sample-image-2.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: feature-about.jpg
+  credit: Nikos Baxevanis
+  creditlink: http://nikosbaxevanis.com/
 ---
 
 Hi, I'm **Nikos Baxevanis**, a software engineer and [open-source programmer](https://www.openhub.net/accounts/moodmosaic) based in Greece.
